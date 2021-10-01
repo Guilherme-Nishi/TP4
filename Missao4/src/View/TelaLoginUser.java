@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import lojaRoupas.Cliente;
+
 
 
 public class TelaLoginUser implements ActionListener {
@@ -16,7 +18,9 @@ public class TelaLoginUser implements ActionListener {
 	private static JPasswordField textoSenha1 = new JPasswordField(20);
 	private static JButton login1 = new JButton("Login");
 	private static JButton register1 = new JButton("Registro");
+	private static Cliente email;
 	
+
 	
 	public void TelaLoginUser1 (){
 			Color minhaCor1 = new Color(192, 192, 192);
@@ -62,25 +66,27 @@ public class TelaLoginUser implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src==register1) {
+			
+				
+			
 			new RegisterView().RegisterView1();
 			TelaLoginUser.tela1.dispose();
 			
+		
 		}
 		
 		if(src==login1) {
 			if(userText1.getText()==null||userText1.getText().trim().equals("")||textoSenha1.getPassword().length==0) {
 				 JOptionPane.showMessageDialog(null, "Voce precisa preencher todas as informacoes");
 			}else {
-				
 				TelaLoginUser.tela1.dispose();
 				new TelaUser().TelaUser1();
 			}
 		}
-		
+		}
 	}
 
 
 		
 
 	
-}

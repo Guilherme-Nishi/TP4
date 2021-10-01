@@ -25,12 +25,12 @@ public class Dados {
 		Date d = Calendar.getInstance().getTime();
 		for(int i = 0; i < 5; i++) {
 			Endereço[i] = new Endereço("1234567"+i,"Rua:"+i,i,"Em frente a avenida"+i);
-			funcionarios[i] = new Funcionario("Funcionario"+i,"000000"+1,"01010"+i,Endereço[i]);
+			funcionarios[i] = new Funcionario("Funcionario"+i,"000000"+i,"01010"+i,Endereço[i]);
 			cat[i] = new Categoria("M","Masculino","Infantil");	
 			produto[i] = new Produto("Produto"+i,i+5.55,i+20,"Amarelo",cat[i], "nike", "lindo", i+1000 );		
 		cart[i]=new Cartao("Nome "+i,100+i,"10000"+i,"17/10/2002"+i);
 			cliente[i] = new Cliente("Cliente "+i,"32423"+i,i+"@hotmail.com",Endereço[i],cart[i]);
-			
+			venda[i]=new Venda("1000"+i,produto[i],cliente[i]);
 			
 		}
 		qtdcart=5;
@@ -149,11 +149,11 @@ public class Dados {
 		this.Endereço = Endereço;
 	}
 
-	public int getQtdend() {
+	public int getQtvend() {
 		return qtdend;
 	}
 
-	public void setQtdend(int qtdend) {
+	public void setQtvend(int qtdend) {
 		this.qtdend = qtdend;
 	}
 
@@ -180,6 +180,11 @@ public class Dados {
 
 	public void setQtdclient(int qtdclient) {
 		this.qtdclient = qtdclient;
+	}
+
+	public void inserirEditarVenda(Venda b, int pos) {
+		this.venda[pos] = b;
+		if(pos == qtdvend) qtdvend++;
 	}
 
 	

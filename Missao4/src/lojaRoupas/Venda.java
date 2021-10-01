@@ -12,6 +12,8 @@ public class Venda {
 		cliente=c;
 	}
 	
+
+
 	public String toString() {
 		return "Venda - "+ numerovenda + produto + "Cliente" + cliente;
 	}

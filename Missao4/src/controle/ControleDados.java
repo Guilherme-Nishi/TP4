@@ -31,7 +31,13 @@ public class ControleDados {
 	public Cliente[] getCliente() {
 		return this.d.getCliente();
 	}
-	
+   public Venda[] getVenda() {
+		
+		return this.d.getVenda();
+	}
+   public int getqtdvenda() {
+		return this.d.getQtdvend();
+	}
 
 
 	public boolean inserirEditarCliente(String[] dadosCliente) {
@@ -58,6 +64,21 @@ public class ControleDados {
 				return true;
 		}
 	}
-	
+	public boolean inserirEditarVenda(String[] dadosVenda) {
+		int tu = 1;
+		if(tu==0) {
+			return false;
+		} else {
+				Venda b = new Venda(dadosVenda[1], new Produto(dadosVenda[2], Double.parseDouble(dadosVenda[3]),Integer.parseInt(dadosVenda[4]), 
+						dadosVenda[5], new Categoria(dadosVenda[6],dadosVenda[7],dadosVenda[8]),dadosVenda[9],dadosVenda[10],Integer.parseInt(dadosVenda[11])), new Cliente(dadosVenda[12], dadosVenda[13], dadosVenda[14],
+								new Endereço(dadosVenda[15],dadosVenda[16], Integer.parseInt(dadosVenda[17]), dadosVenda[18]),
+								new Cartao(dadosVenda[19],Integer.parseInt(dadosVenda[20]),dadosVenda[21],dadosVenda[22])));
+						
+				d.inserirEditarVenda(b, Integer.parseInt(dadosVenda[0]));
+				return true;
+		}
+	}
+
+
 	
 }
